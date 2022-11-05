@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        input[type=text], select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+        label {
+            padding: 12px 12px 12px 0;
+            display: inline-block;
+        }
+
+        input[type=submit] {
+            background-color: #04AA6D;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            float: right;
+        }
+
+        input[type=reset] {
+            background-color: gray;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            float: right;
+            margin: 10px;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+        .container {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+
+        .col-25 {
+            float: left;
+            width: 25%;
+            margin-top: 6px;
+        }
+
+        .col-75 {
+            float: left;
+            width: 75%;
+            margin-top: 6px;
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        @media screen and (max-width: 600px) {
+            .col-25, .col-75, input[type=submit] input[type=reset]{
+                width: 100%;
+                margin-top: 0;
+            }
+        }
+    </style>
+    <script>
+        function validateForm() {
+            if(form.name.value=="") {
+                alert("이름을 입력하세요");
+                form.name.focus();
+                return false;
+            }
+            if(form.grade.value=="") {
+                alert("학년을 입력하세요");
+                form.grade.focus();
+                return false;
+            }
+            if(form.major.value=="") {
+                alert("전공을 입력하세요");
+                form.major.focus();
+                return false;
+            }
+            if(form.relation.value=="") {
+                alert("관계 입력하세요");
+                form.relation.focus();
+                return false;
+            }
+            if(form.email.value=="") {
+                alert("이메일을 입력하세요");
+                form.email.focus();
+                return false;
+            }
+            if(form.phoneNumber.value=="") {
+                alert("전화번호를 입력하세요");
+                form.phoneNumber.focus();
+                return false;
+            }
+            if(form.birthday.value=="") {
+                alert("생일을 입력하세요");
+                form.birthday.focus();
+                return false;
+            }
+            if(form.address.value=="") {
+                alert("사는 곳을 입력하세요");
+                form.address.focus();
+                return false;
+            }
+            if(form.food.value=="") {
+                alert("좋아하는 음식을 입력하세요");
+                form.food.focus();
+                return false;
+            }
+            if(form.hobby.value=="") {
+                alert("취미를 입력하세요");
+                form.hobby.focus();
+                return false;
+            }
+            if(form.etc.value=="") {
+                alert("기타사항을 입력하세요");
+                form.etc.focus();
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+<form name="form" action="form_ok.jsp" onsubmit="return validateForm()"
+      method="post">
+    <h3>너의 새로운 친구는?</h3>
+    <div class="row">
+        <div class="col-25">
+            <label for="name">이름</label>
+        </div>
+        <div class="col-75">
+            <input type="text" id="name" name="name" placeholder="친구 이름을 적으세요">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-25">
+            <label>학년</label>
+        </div>
+        <div class="col-75">
+            <input type="radio" id="1" name="grade" value="1">
+            <label form="1">1학년</label>
+            <input type="radio" id="2" name="grade" value="2">
+            <label form="2">2학년</label>
+            <input type="radio" id="3" name="grade" value="3">
+            <label form="3">3학년</label>
+            <input type="radio" id="4" name="grade" value="4">
+            <label form="4">4학년</label><br><br>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-25">
+            <label for="major">전공</label>
+        </div>
+        <div class="col-75">
+            <select id="major" name="major">
+                <option>글로벌리더십학부</option>
+                <option>전산전자공학부</option>
+                <option>경영경제학부</option>
+                <option>공간환경시스템공학부</option>
+                <option>상담심리사회복지학부</option>
+                <option>기계제어학부</option>
+                <option>국제어문학부</option>
+            </select><br><br>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-25">
+            <label for="relation">관계</label>
+        </div>
+        <div class="col-75">
+            <input type="text" id="relation" name="relation" placeholder="어떤 관계인가요?">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-25">
+            <label for="email">이메일</label>
+        </div>
+        <div class="col-75">
+            <input type="text" id="email" name="email" placeholder="이메일을 적으세요">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-25">
+            <label for="phoneNumber">전화번호</label>
+        </div>
+        <div class="col-75">
+            <input type="text" id="phoneNumber" name="phoneNumber" placeholder="전화번호를 입력하세요">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-25">
+            <label for="birthday">생일</label>
+        </div>
+        <div class="col-75">
+            <input type="date" id="birthday" name="birthday"><br><br>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-25">
+            <label for="address">사는 곳</label>
+        </div>
+        <div class="col-75">
+            <input type="text" id="address" name="address" placeholder="친구의 사는 곳을 적으세요">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-25">
+            <label>좋아하는 음식</label>
+        </div>
+        <div class="col-75">
+            <input type="checkbox" name="food" value="한식">한식<br>
+            <input type="checkbox" name="food" value="중식">중식<br>
+            <input type="checkbox" name="food" value="양식">양식<br>
+            <input type="checkbox" name="food" value="일식">일식<br><br>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-25">
+            <label for="hobby">취미</label>
+        </div>
+        <div class="col-75">
+            <input type="text" id="hobby" name="hobby" placeholder="친구의 취미를 적으세요">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-25">
+            <label>기타</label>
+        </div>
+        <div class="col-75">
+            <textarea name='etc' cols='20' rows='5'></textarea><br>
+        </div>
+    </div>
+    <div>
+        <input type="reset" value="취소">
+        <input type="submit" value="저장">
+    </div>
+</form>
+
+
+</body>
+</html>
